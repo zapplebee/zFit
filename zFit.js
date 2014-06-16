@@ -1,5 +1,6 @@
-$.fn.zFit = function(allSameSize){
+$.fn.zFit = function(tolerance, allSameSize){
 
+tolerance = tolerance || 30;
 allSameSize = allSameSize || false;
 var sizes = [];
 this.each(function(i){
@@ -14,26 +15,20 @@ this.each(function(i){
 
 	function makeFit(estimate){
 	
-		if (estimate < .6){
 
-		$zFit.css("white-space","normal");
-		$zFit.addClass("zTiny");
+		$zFit.css("font-size",(estimate)+"em");
+
+//		alert("theElementHeight:"+theElementHeight+"\n$zFit.height():"+$zFit.height()+"\ntheElementWidth:"+theElementWidth+"\n$zFit.width():"+$zFit.width());
+		if ((theElementHeight) >= $zFit.height() && (theElementWidth) >= $zFit.width()){
+//			alert("true");
+//			alert(zestimate);
+			makeFit(estimate * 1.1);
 
 		}
-
-		$zFit.css("font-size",estimate+"em");
-
-		
-		if (theElementHeight < $zFit.height() || theElementWidth < $zFit.width()){
-			makeFit((estimate *.8).toFixed(2))
-
-		}else{
-			if(allSameSize && estimate >= .6){
-				sizes.push(estimate);
-			}
-			$zFit.css("display","table-cell");
+		else{
+		$zFit.css("font-size",(estimate * (1/1.1))+"em");
+		$zFit.css("display","table-cell");
 		}
-
 	}
 
 	var estimated;
@@ -52,11 +47,11 @@ this.each(function(i){
 
 
 makeFit(estimated.toFixed(2));
-
+//alert($zFit.attr("style"));
 });
 
 if(allSameSize){
-this.find(".zFit").not(".zTiny").css("font-size", Math.min.apply(Math, sizes)+"em");
+this.find(".zFit").css("font-size", Math.min.apply(Math, sizes)+"em");
 }
 
 }
