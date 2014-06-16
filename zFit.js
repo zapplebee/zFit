@@ -38,7 +38,7 @@ this.each(function(i){
 
 	var estimated;
 	
-	if ((theElementWidth / zFitWidth) == 1){
+	if ((theElementWidth / zFitWidth) <= 1){
 	estimated = (theElementHeight / zFitHeight);
 //	alert("ratio:" + estimated + "\nElement Height:" + theElementHeight + "\nzHeight:" + zFitHeight);
 	}

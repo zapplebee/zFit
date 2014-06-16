@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zFit Demo</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="zFit.js"></script>
+<script>
+
+</script>
+<style>
+body{
+font-family:"Arial",sans-serif;
+}
+
+.resize1, .resize2{
+
+margin:4px;
+width: 250px;
+height:1000px;
+padding:24px;
+background-color: #cccccc;
+border-radius:4px;
+text-align:center;
+display:inline-block;
+}
+
+</style>
+</head>
+<body>
+
+<div class="resize1">
+Lorem Ipsum
+</div>
+
+
+<script>
+$(".resize2").zFit(true);
+$(".resize1").zFit();
+</script>
+</body>
