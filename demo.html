@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zFit Demo</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link id="stylesheet" rel="stylesheet" type="text/css" href="zFit.css">
+<script src="zFit.js"></script>
+<script>
+
+</script>
+<style>
+
+#a, #b{
+width: 200px;
+height: 200px;
+padding: 8px;
+background-color: red;
+}
+
+</style>
+</head>
+<body>
+<h1>zFit</h1>
+<p>A jQuery plugin to vertically center and shrink to fit contents of an element.</p>
+
+
+<div id="a">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta, mi sit amet facilisis pharetra, enim ante aliquam augue, ac consectetur quam lacus ultricies tellus. Etiam feugiat sapien orci, et ultrices orci tristique in. In hac habitasse platea dictumst. Duis nibh elit, porttitor nec velit ac, imperdiet luctus arcu.
+</div>
+
+
+<div id="b">
+Lorem
+</div>
+
+<script>
+$("#a").zFit();
+$("#b").zFit();
+</script>
+</body>

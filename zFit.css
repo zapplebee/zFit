@@ -1,0 +1,17 @@
+.zFit{
+background:transparent;
+overflow:hidden;
+display:table;
+}
+
+.zFitInner{
+background:transparent;
+width:100%;
+vertical-align:middle;
+
+}
+
+.zOpacity{
+    opacity:0;
+    filter:alpha(opacity=0);
+}
