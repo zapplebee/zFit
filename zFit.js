@@ -1,9 +1,6 @@
-$.fn.zFit = function(allSameSize){
+$.fn.zFit = function(){
 
-allSameSize = allSameSize || false;
-var sizes = [];
-this.each(function(i){
-	var $theElement = $(this);
+	var $theElement = this;
 	var theElementHeight = $theElement.height();
 	var theElementWidth = $theElement.width();
 
@@ -17,36 +14,26 @@ this.each(function(i){
 
 		$zFit.css("font-size",estimate+"em");
 
-		
 		if (theElementHeight < $zFit.height() || theElementWidth < $zFit.width()){
-			makeFit((estimate *.9))
+			makeFit((estimate -.1))
 
 		}else{
-			if(allSameSize){
-				sizes.push(estimate);
-			}
 			$zFit.css("display","table-cell");
 		}
 
 	}
 
 	var estimated = [];
-//	estimated.push((theElementHeight * theElementWidth) / (zFitHeight * zFitWidth));
+	estimated.push((theElementHeight * theElementWidth) / (zFitHeight * zFitWidth));
 	estimated.push((theElementHeight) / (zFitHeight));
 	estimated.push((theElementWidth) / (zFitWidth));
 
 
 	if ($.grep(estimated, function(n,i){return n > 1}).length = 0){
-		alert(1/(Math.min.apply(Math, estimated)));
-		makeFit(1/(Math.min.apply(Math, estimated)));
+		makeFit(Math.min.apply(Math, estimated));
 	}else{
-		alert(1/(Math.max.apply(Math, estimated)));
-		makeFit(1/(Math.max.apply(Math, estimated)));
+		makeFit(Math.max.apply(Math, estimated));
 	}
-});
 
-if(allSameSize){
-this.find(".zFit").css("font-size", Math.min.apply(Math, sizes)+"em");
-}
 
 }

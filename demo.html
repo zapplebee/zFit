@@ -12,16 +12,14 @@ body{
 font-family:"Arial",sans-serif;
 }
 
-.resize1, .resize2{
-white-space:nowrap;
+.resize{
 margin:4px;
-width: 250px;
-height: 250px;
+width: 500px;
+height: 500px;
 padding:24px;
 background-color: #cccccc;
 border-radius:4px;
 text-align:center;
-display:inline-block;
 }
 
 </style>
@@ -29,34 +27,18 @@ display:inline-block;
 <body>
 <h1>zFit</h1>
 <p>A jQuery plugin to vertically center and shrink to fit contents of an element.</p>
-<h2>Let each element find its largest size text without regard for the selection</h2>
-<p>Use <code>$(".resize1").zFit();</code> to fit all text independently within the selection. Also, best option if a single item is in the selector (i.e. $("#myElement")).</p>
-<div class="resize1">
-Nam porta, mi sit amet facilisis pharetra, enim ante aliquam augue, ac consectetur quam lacus ultricies tellus. Etiam feugiat sapien orci, et ultrices orci tristique in. In hac habitasse platea dictumst. Duis nibh elit, porttitor nec velit ac, imperdiet luctus arcu.
-</div>
-<div class="resize1">
-Lorem
-</div>
-<div class="resize1">
-Lorem
-</div>
-<h2>Or match the sizes of all selected elements</h2>
-<p>Use <code>$(".resize2").zFit(true);</code> to match all text to the size of the smallest text. Great for buttons of variable length or links.</p>
-<div class="resize2">
+
+
+<div class="resize">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta, mi sit amet facilisis pharetra, enim ante aliquam augue, ac consectetur quam lacus ultricies tellus. Etiam feugiat sapien orci, et ultrices orci tristique in. In hac habitasse platea dictumst. Duis nibh elit, porttitor nec velit ac, imperdiet luctus arcu.
 </div>
 
 
-<div class="resize2">
+<div class="resize">
 Lorem
 </div>
-<div class="resize2">
-Lorem
-</div>
-
 
 <script>
-$(".resize2").zFit(true);
-$(".resize1").zFit();
+$(".resize").zFit();
 </script>
 </body>
