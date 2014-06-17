@@ -12,7 +12,7 @@ body{
 font-family:"Arial",sans-serif;
 }
 
-.resize1, .resize2{
+.demo{
 
 margin:4px;
 width: 250px;
@@ -24,39 +24,64 @@ text-align:center;
 display:inline-block;
 }
 
+code{
+background-color: #dddddd;
+padding: 2px;
+border-radius:4px;
+}
 </style>
 </head>
 <body>
 <h1>zFit</h1>
 <p>A jQuery plugin to vertically center and shrink to fit contents of an element.</p>
 <h2>Let each element find its largest size text without regard for the selection</h2>
-<p>Use <code>$(".resize1").zFit();</code> to fit all text independently within the selection. Also, best option if a single item is in the selector (i.e. $("#myElement")).</p>
-<div class="resize1">
+<p>Use <code>$(".resize1").zFit(false);</code> or <code>$(".resize1").zFit();</code>just to fit all text independently within the selection. Also, best option if a single item is in the selector (i.e. $("#myElement")).</p>
+<div class="resize1 demo">
 Nam porta, mi sit amet facilisis pharetra, enim ante aliquam augue, ac consectetur quam lacus ultricies tellus. Etiam feugiat sapien orci, et ultrices orci tristique in. In hac habitasse platea dictumst. Duis nibh elit, porttitor nec velit ac, imperdiet luctus arcu.
 </div>
-<div class="resize1">
+<div class="resize1 demo">
 Lorem Ipsum
 </div>
-<div class="resize1">
+<div class="resize1 demo">
 Lorem
 </div>
 <h2>Or match the sizes of all selected elements</h2>
 <p>Use <code>$(".resize2").zFit(true);</code> to match all text to the size of the smallest text. Great for buttons of variable length or links.</p>
-<div class="resize2">
+<div class="resize2 demo">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta, mi sit amet facilisis pharetra, enim ante aliquam augue, ac consectetur quam lacus ultricies tellus. Etiam feugiat sapien orci, et ultrices orci tristique in. In hac habitasse platea dictumst. Duis nibh elit, porttitor nec velit ac, imperdiet luctus arcu.
 </div>
 
 
-<div class="resize2">
+<div class="resize2 demo">
 Lorem Ipsum Mother Fucker, Do You Speak it?
 </div>
-<div class="resize2">
+<div class="resize2 demo">
 Lorem
 </div>
+<h2>Don't want to vertically center the result? Just set the parameter</h2>
+<p>Use <code>$(".resize3").zFit(true, "bottom");</code> to align the content at the bottom.</p>
+<div class="resize3 demo">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta, mi sit amet facilisis pharetra, enim ante aliquam augue, ac consectetur quam lacus ultricies tellus. Etiam feugiat sapien orci, et ultrices orci tristique in. In hac habitasse platea dictumst. Duis nibh elit, porttitor nec velit ac, imperdiet luctus arcu.
+</div>
 
+
+<div class="resize3 demo">
+Lorem Ipsum Mother Fucker, Do You Speak it?
+</div>
+<p>Or <code>$(".resize4").zFit(true, "top");</code> for the obvious result.</p>
+<div class="resize4 demo">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta, mi sit amet facilisis pharetra, enim ante aliquam augue, ac consectetur quam lacus ultricies tellus. Etiam feugiat sapien orci, et ultrices orci tristique in. In hac habitasse platea dictumst. Duis nibh elit, porttitor nec velit ac, imperdiet luctus arcu.
+</div>
+
+
+<div class="resize4 demo">
+Lorem Ipsum Mother Fucker, Do You Speak it?
+</div>
 
 <script>
 $(".resize2").zFit(true);
+$(".resize3").zFit(true,"bottom");
+$(".resize4").zFit(true,"top");
 $(".resize1").zFit();
 </script>
 </body>
