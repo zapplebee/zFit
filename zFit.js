@@ -7,7 +7,7 @@ this.each(function(i){
 	var theElementHeight = $theElement.height();
 	var theElementWidth = $theElement.width();
 
-	$theElement.wrapInner('<div style="display:table;height:'+theElementHeight+'px;width:'+theElementWidth+'px"><div class="zFit" style="vertical-align:'+valign+';display:inline-block;"></div></div>');
+	$theElement.wrapInner('<div style="display:table;height:'+theElementHeight+'px;width:'+theElementWidth+'px;margin:0px;padding:0px;"><div class="zFit" style="vertical-align:'+valign+';display:inline-block;margin:0px;padding:0px;"></div></div>');
 	var $zFit = $theElement.find(".zFit");
 
 	function makeFit(estimate){
