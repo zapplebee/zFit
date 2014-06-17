@@ -14,7 +14,7 @@ this.each(function(i){
 
 		$zFit.css("font-size",(estimate)+"em");
 
-		if (((theElementHeight) < $zFit.height()) || ((theElementWidth) < $zFit.width())){
+		if ((theElementHeight < $zFit.height()) || (theElementWidth < $zFit.width())){
 
 			var oldEM = estimate * (1/1.05);
 			sizes.push(oldEM);
